@@ -1,5 +1,9 @@
 # brockdown
 
+This is a project that has been adapted from Zhian Kamvar's [beaverdown](https://github.com/zkamvar/beaverdown) package. Below is the README document that was provided with the `beaverdown` package with slight alterations to ensure user's of `brockdown` can easily construct a thesis with compliant formatting.
+
+----------
+
 This project is a modified version Chester Ismay's [thesisdown][4] package to 
 provide support for Oregon State University's thesis.
 
@@ -8,7 +12,7 @@ Currently, the PDF version is fully functional. All other versions are derived f
 
 ## Installation
 
-To install and use `beaverdown` and use it for your dissertation/thesis, you will need:
+To install and use ~~beaverdown~~ and use it for your dissertation/thesis, you will need:
 
  - [pandoc][0]
  - [LaTeX][1]
