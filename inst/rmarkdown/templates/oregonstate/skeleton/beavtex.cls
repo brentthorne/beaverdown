@@ -1,9 +1,22 @@
 \newcommand{\filename}{beavtex}
-\newcommand{\fileversion}{v1.2}
-\newcommand{\filedate}{2016/08/25}
+\newcommand{\fileversion}{v1.0}
+\newcommand{\filedate}{2017/11/08}
 
 %-------------------------------------------------------------------------------
-% BeavTeX
+%
+% BrockTex
+%   Brock University Thesis Class
+%
+%   Brent Thorne <bthorne2@brocku.ca>:
+%     -Added changes to bevtex.cls to ensure formatting standards for Brock University
+%      thesis papers.
+%     -Very little changed in this document, credit should be given to the BeaverTex and
+%       and their associated adaptions.
+%     -Still a work in progress, changes to come over time.
+%---------------------------------------------------------------------------------
+%Adapted from:
+%
+%BeavTeX
 % Oregon State University Thesis Class
 %
 % Neville Mehta <neville@lifetime.oregonstate.edu>:
@@ -23,7 +36,7 @@
 %   Options added.
 %
 % Adapted from John Metta's BeavTeX class
-%   John Metta (prev. name: Pennington) 
+%   John Metta (prev. name: Pennington)
 %   <john.pennington@lifetime.oregonstate.edu>
 % Originally thesis.sty
 %---------------------------------------------------------------------------------
@@ -38,14 +51,14 @@
 % -------------------------------------------------------------------------------
 %  August 2016: Edited by Zhian N. Kamvar
 %
-%  Add elements to use with Rmarkdown. Mainly, adding code for compatibility 
+%  Add elements to use with Rmarkdown. Mainly, adding code for compatibility
 %  code produced from Rmarkdown. Much of the code was copied directly from
-%  Chester Ismay's thesisdown package for Reed college: 
+%  Chester Ismay's thesisdown package for Reed college:
 %  https://github.com/ismayc/thesisdown
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{\filename}[\filedate\space\fileversion\space BeavTeX: OSU thesis class]
+\ProvidesClass{\filename}[\filedate\space\fileversion\space BeavTeX: OSU thesis class] % B.T. Change to BrockTex from BeaverTex ?
 
 \RequirePackage{setspace}
 \RequirePackage{ifthen}
@@ -130,7 +143,7 @@
 \newcommand{\beavtex}{$\rm{B^{\kern-.1em\textsc{e}}\ \kern-.6em_{\textsc{a}}\kern-.4em\textsc{v}}$\kern-.3em\TeX}
 
 % -------------------------------------------------------------------------------
-% beavtex is a modified (default 12pt) book style. it accepts these options:
+% B.T. brocktex is a modified (default 12pt) book style. it accepts these options:
 
 % [10pt], [11pt], and [12pt]. These options are passed to book class. The
 % default is 12pt.
@@ -146,7 +159,7 @@
 % an odd page). Date is included in the header, along with the word "Draft". In
 % the submission version, it is assumed that the document will be printed
 % single-sided. Default is submission.
-    
+
 % [seploa]. When [seploa] is set, the appendices do not appear in the main table
 % of contents (except for the entry "appendices" itself). Rather, they are
 % listed in the list of appendices. According to T.G., you need this if you have
@@ -161,7 +174,7 @@
 \DeclareOption{11pt}{\renewcommand{\@ftsize}{11pt}}
 \DeclareOption{12pt}{\renewcommand{\@ftsize}{12pt}}
 
-% Left side margin. 
+% Left side margin.
 % [1.5in], [1.7in]
 % T.G. : the left margin must be at least 1.5 inches (recommend 1.7). default is
 % 1.7, unless [1.5in] is specified.
@@ -244,7 +257,7 @@
 \newcommand{\heading}{\fontsize{14}{18}\selectfont}
 
 %-------------------------------------------------------------------------------
-% Misc commands 
+% Misc commands
 
 % Redefine the default (plain) pagestyle
 \renewcommand{\ps@plain}{%
@@ -426,8 +439,33 @@
   \hfill
   \if\@coadvisor * \@advisor
   \else \@advisor\hfill\@coadvisor
-  \fi 
+  \fi
   \hfill
+}
+
+% Title page for Brock University based on pdf document foun on brockdown github
+\renewcommand{\titlepage}{
+    \thispagestyle{empty}
+    \begin{center}
+      \setlength{\baselineskip}{14.5pt}
+      {\heading \@title} \\
+      \vfill
+      \emptyline by\\ \emptyline
+      \@author\\
+      \vfill
+      \@depttype
+      \vfill
+      Submitted \\
+      in partial fulfillment of the requirements \\
+      for the degree of\\
+      \vfill
+      \@degree\ in \@major
+      \vfill
+      ${}^\copyright$Copyright by \@author\\
+      \@submitdate \\
+      All Rights Reserved
+    \end{center}
+  \clearpage
 }
 
 % Flyleaf, a blankpage
@@ -436,30 +474,15 @@
 % Abstract page
 \newcommand{\abspage}{
   \pagestyle{empty}
-  \begin{doublespacing} 
-    \begin{center} 
-      {\heading AN ABSTRACT OF THE \MakeUppercase{\@doctype} OF}
+  \begin{doublespacing}
+    \begin{center}
+      {\heading ABSTRACT}
     \end{center}
-    \begin{flushleft}
-      \noindent
-      \ulinewithbreaks{\@author} for the degree of \ulinewithbreaks{\@degree} in%
-      \if\@twomajor * \ulinewithbreaks{\@major}
-      \else
-      \ulinewithbreaks{\@major} and \ulinewithbreaks{\@twomajor}
-      \fi
-      presented on \uline{\@submitdate}.\\
-      \emptyline
-      \noindent Title: \ulinewithbreaks{\@title}
-    \end{flushleft}
+    \noindent
     \emptyline
-    Abstract approved: \hrulefill \\
-    \phantom{Abstract approved:\ }\advisorstring
-    \vspace{1em}
+    \emptyline
+    \@abstract
   \end{doublespacing}
-  \noindent
-  \emptyline
-  \emptyline
-  \@abstract
   \clearpage
 }
 
@@ -477,37 +500,14 @@
   \clearpage
 }
 
-% Title page
-\renewcommand{\titlepage}{
-    \thispagestyle{empty}
-    \begin{center}
-      \setlength{\baselineskip}{14.5pt}
-      {\heading \@title} \\
-      \emptyline by\\ \emptyline
-      \@author\\
-      \vfill
-      A \MakeUppercase{\@doctype}\\ \emptyline
-      submitted to\\ \emptyline
-      Oregon State University\\
-      \vfill
-      in partial fulfillment of\\
-      the requirements for the\\
-      degree of\\ \emptyline
-      \@degree
-      \vfill
-      Presented \@submitdate\\
-      Commencement June \@commencementyear
-    \end{center}
-  \clearpage
-}
-
-% Approval page
+% Approval page - this is the beaverdown default, there is no single Brock University
+% approval format, change/ request changes as needed.
 \newcommand{\approvalpage}{
   \thispagestyle{empty}
   \begin{singlespacing}
     \begin{flushleft}
       \noindent
-      \ulinewithbreaks{\@degree} \MakeLowercase{\@doctype} of \ulinewithbreaks{\@author} 
+      \ulinewithbreaks{\@degree} \MakeLowercase{\@doctype} of \ulinewithbreaks{\@author}
       presented on \uline{\@submitdate}. \\
       \vspace{3em}
       APPROVED:\\
@@ -522,14 +522,14 @@
       \else\hrulefill \\  Co-Major Professor, representing \@twomajor \\
       \vspace{3em}
       \fi
-      \hrulefill \\ 
+      \hrulefill \\
       % major department head
       \@depthead\ of the \@depttype\ of \@department \\
       \vspace{3em}
-      \if\@twodepartment * 
+      \if\@twodepartment *
       \else
       % Here is the second Department
-      \hrulefill \\ 
+      \hrulefill \\
       \@twodepthead\ of the \@twodepttype\ of \@twodepartment \\
       \vspace{3em}
       \fi
@@ -537,7 +537,7 @@
       Dean of the Graduate School \\
       \vfill
       I understand that my \MakeLowercase{\@doctype} will become part of the
-      permanent collection of Oregon State University libraries. My signature
+      permanent collection of Brock University libraries. My signature
       below authorizes release of my \MakeLowercase{\@doctype} to any reader
       upon request.
       \vspace{3em} \\
@@ -597,36 +597,51 @@
 % the page will not be produced. There is no need to check here.
 \newcommand{\pretext}{%
   \pagenumbering{roman}
-  
-  % Mandatory pages
-  \flyleaf           % A. Flyleaf
-  \abspage           % B. Abstract
-  \copyrightpage     % C. Copyright page
-  \titlepage         % D. Title page
-  \approvalpage      % E. Approval page
 
-  % Optional pages
-  \ackpage           % F. Acknowledgments
-  \contripage        % G. Contribution of authors
+
+  %------------------------------------------------
+  % NOTE: This is a work in progress. Order of these
+  % pages will determine their order in the
+  % final document.
+  %
+  % place '\flyleaf' in locations where you need a
+  % blank page if needed.
+  %
+  % (B.T.)
+  %------------------------------------------------
+    % Comment out to activate these default beaverdown pages
+      % \flyleaf         % Flyleaf
+      % \copyrightpage   % Copyright page
+      % \approvalpage    % Approval page
+
+  % brockdown specific order:
+  % Mandatory pages (if YAML is not filled in then there will be a compile error)
+  \titlepage         % A. Title page
+  \abspage           % B. Abstract
+
+  % Optional pages (if YAML info is not filled out these pages will not appear)
+  \ackpage           % C. Acknowledgments
+  \dedpage           % D. Dedication OPTIONAL
+  \contripage        % E. Contribution of authors
 
   % Listings
-  \tableofcontents        % H.
-  \listoffigures          % I.
-  \listoftables           % J
+  \tableofcontents        % F.
+  \listoffigures          % G.
+  \listoftables           % H
 
 	% Algorithm listing
 	\ifthenelse{\isundefined{\listofalgorithms}}{}{
   \expandafter\newcommand\csname ps@loaa\endcsname{
   \renewcommand{\@oddhead}{%
   \parbox{\textwidth}{%
-  \centering {\heading LIST OF ALGORITHMS} \\ 
+  \centering {\heading LIST OF ALGORITHMS} \\
   \uline{Algorithm}\hfill\uline{Page}}}
   \renewcommand{\@oddfoot}{}
   \renewcommand{\@evenfoot}{}}
   \expandafter\newcommand\csname ps@loab\endcsname{%
   \renewcommand{\@oddhead}{%
   \parbox{\textwidth}{%
-  \centering {\heading LIST OF ALGORITHMS\ (Continued)} \\ 
+  \centering {\heading LIST OF ALGORITHMS\ (Continued)} \\
   \uline{Algorithm}\hfill\uline{Page}}}
   \renewcommand{\@evenhead}{\@oddhead}
   \renewcommand{\@oddfoot}{}
@@ -635,13 +650,12 @@
   \listofalgorithms
   }
 
-  \listofappendices       % K.
-  \listofappendixfigures  % L.
-  \listofappendixtables   % M.
+  \listofappendices       % I.
+  \listofappendixfigures  % J.
+  \listofappendixtables   % K.
 
   % Optional pages
-  \dedpage           % O. Dedication
-  \prefpage          % P. Preface
+  \prefpage          % L. Preface
 }
 
 \renewcommand{\maketitle}{\if\@nopretext \else\pretext\fi}
@@ -807,7 +821,7 @@
   \expandafter\newcommand\csname ps@#1a\endcsname{%
     \renewcommand{\@oddhead}{%
       \parbox{\textwidth}{%
-        \centering {\heading #2} \\ 
+        \centering {\heading #2} \\
         \uline{#3}\hfill\uline{Page}
       }
     }
@@ -818,7 +832,7 @@
   \expandafter\newcommand\csname ps@#1b\endcsname{%
     \renewcommand{\@oddhead}{%
       \parbox{\textwidth}{%
-        \centering {\heading #2\ (Continued)} \\ 
+        \centering {\heading #2\ (Continued)} \\
         \uline{#3}\hfill\uline{Page}
       }
     }
