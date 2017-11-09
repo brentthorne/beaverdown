@@ -1,4 +1,4 @@
-name:  Oregon State University Thesis
+name:  Brock University
 description: >
- Template for creating a Thesis/Dissertation at Oregon State University using R Markdown based on the Oregon State University LaTeX template on Overleaf, Chester Ismay's thesisdown package, and the R bookdown package.
+ Template for creating a Thesis/Dissertation at Brock University using R Markdown based on the beaverdown package and Oregon State University LaTeX template on Overleaf, Chester Ismay's thesisdown package, and the R bookdown package.
 
