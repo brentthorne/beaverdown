@@ -139,7 +139,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 % End of ZNK add
 
-% BeavTeX symbol
+% B.T. BrockTeX symbol ??
 \newcommand{\beavtex}{$\rm{B^{\kern-.1em\textsc{e}}\ \kern-.6em_{\textsc{a}}\kern-.4em\textsc{v}}$\kern-.3em\TeX}
 
 % -------------------------------------------------------------------------------
