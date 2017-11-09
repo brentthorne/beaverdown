@@ -1,6 +1,6 @@
 # brockdown
 
-This is a project that has been adapted from Zhian Kamvar's [beaverdown](https://github.com/zkamvar/beaverdown) package. Below is the README document that was provided with the `beaverdown` package with slight alterations to ensure user's of `brockdown` can easily construct a thesis with compliant formatting.
+This is a project that has been adapted from Zhian Kamvar's [beaverdown](https://github.com/zkamvar/beaverdown) package. Below is the README document that was provided with the `beaverdown` package with slight alterations to ensure user's of `brockdown` can easily construct a thesis with compliant formatting specific to [Brock University](https://brocku.ca/).
 
 ----------
 
@@ -12,7 +12,7 @@ Currently, the PDF version is fully functional. All other versions are derived f
 
 ## Installation
 
-To install and use ~~beaverdown~~ and use it for your dissertation/thesis, you will need:
+To install and use ~~`beaverdown`~~ `brockdown` and use it for your dissertation/thesis, you will need:
 
  - [pandoc][0]
  - [LaTeX][1]
@@ -24,13 +24,17 @@ Open Rstudio and type:
 
 ```r
 if (!require("devtools")) install.packages("devtools", repos = "http://cran.rstudio.org")
-devtools::install_github("zkamvar/beaverdown")
+devtools::install_github("brentthorne/brockdown")
 ```
 
 To use it, open Rstudio, click on **File > New File > Rmarkdown ...** and then
-select the **Oregon State University Thesis** from the **Templates**.
+select the **Brock University Thesis** from the **Templates**.
 
 ![New R Markdown](thesis_rmd.png)
+
+> **Note from brockdown**:
+> While this next step is good feel free to name the new RMarkdown document
+> *'index'* so that you do not have to make changes to other files down the line.
 
 Make sure to give your thesis a title and save it to the correct path. Rstudio
 will send you to that directory and then you should open `_bookdown.yml` and
