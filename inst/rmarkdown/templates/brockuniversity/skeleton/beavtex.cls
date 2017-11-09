@@ -1,4 +1,4 @@
-\newcommand{\filename}{beavtex}
+\newcommand{\filename}{brocktex}
 \newcommand{\fileversion}{v1.0}
 \newcommand{\filedate}{2017/11/08}
 

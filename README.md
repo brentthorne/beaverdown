@@ -1,4 +1,4 @@
-# beaverdown
+# brockdown
 
 This project is a modified version Chester Ismay's [thesisdown][4] package to 
 provide support for Oregon State University's thesis.

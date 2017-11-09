@@ -30,8 +30,8 @@ This works by utilizing the \pkg{knitr} function
 
 # Setup for the example
 # Note that this will already be set for you when you run the document
-rootdir <- find.package("beaverdown")
-rootdir <- paste0(rootdir, "/rmarkdown/templates/oregonstate/skeleton/")
+rootdir <- find.package("brockdown")
+rootdir <- paste0(rootdir, "/rmarkdown/templates/brockuniversity/skeleton/")
 knitr::opts_knit$set(root.dir = rootdir)
 
 
@@ -43,4 +43,3 @@ render_caption(caption, index = "skeleton.Rmd")
 \seealso{
 \code{\link{process_citations}}
 }
-

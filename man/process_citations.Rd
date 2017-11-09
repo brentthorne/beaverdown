@@ -25,8 +25,8 @@ Process citations in a text formatted with markdown
 \examples{
 # Setup for the example
 # Note that this will already be set for you when you run the document
-rootdir <- find.package("beaverdown")
-rootdir <- paste0(rootdir, "/rmarkdown/templates/oregonstate/skeleton/")
+rootdir <- find.package("brockdown")
+rootdir <- paste0(rootdir, "/rmarkdown/templates/brockuniversity/skeleton/")
 bib <- file.path(rootdir, c("bib/references.bib", "bib/thesis.bib"))
 bib <- paste(bib, collapse = "\\n    ")
 csl <- file.path(rootdir, "csl/apa.csl")
@@ -37,4 +37,3 @@ process_citations(txt, yml)
 \seealso{
 \code{\link{render_caption}}
 }
-
