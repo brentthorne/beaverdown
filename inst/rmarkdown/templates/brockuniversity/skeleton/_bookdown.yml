@@ -5,6 +5,7 @@ rmd_files: ["index.Rmd",
   "chapters/02-chap2.Rmd",
   "chapters/03-chap3.Rmd",
   "chapters/04-conclusion.Rmd",
+  "chapters/05-appendix.Rmd",
   "chapters/99-references.Rmd"
   ]
 download: [["thesis.pdf", "PDF"],
