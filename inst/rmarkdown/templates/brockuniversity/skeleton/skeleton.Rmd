@@ -2,17 +2,17 @@
 #
 # Required Information --------------------------------------------------------
 #
-doctype: 'Dissertation'            # or Thesis
+doctype: 'Thesis'            # or Dissertation
 title: 'An Analysis of Something'  # make a better title than this...
 author: 'Joseph A. Student'
-date: 'January 1, 2013'            # date of submission
-commencement: '2013'               # year of commencement
+date: 'January 1, 2018'            # date of submission
+commencement: '2018'               # year of commencement
 degree: 'Doctor of Philosophy'     # Masters of Science, Art, etc. 
-major: 'Radiation Health Physics'
-depttype: 'School'                 # Department, College, etc.
+major: 'Earth Sciences'
+depttype: 'Faculty of Math and Science Brock University'                 # Department, College, etc.
 depthead: 'Head'                   # Chair, Chancellor, Interim Head, etc.
-department: 'Nuclear Engineering and Radiation Health Physics'
-advisor: 'Jane R. Professor'
+department: 'Department of Earth Science'
+advisor: 'Dr. Jane R. Doe'
 #
 # Optional Information --------------------------------------------------------
 #
