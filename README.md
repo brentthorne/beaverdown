@@ -14,7 +14,7 @@ Currently, the PDF version is fully functional. All other versions are derived f
 
 To install and use ~~`beaverdown`~~ `brockdown` and use it for your dissertation/thesis, you will need:
 
- - [pandoc][0]
+ - [pandoc >= 2.0][0]
  - [LaTeX][1]
  - [R >= 3.3.0][2]
  - [RStudio][3] (optional, but it helps)
