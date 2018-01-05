@@ -9,7 +9,7 @@ date: 'January 1, 2018'            # date of submission
 commencement: '2018'               # year of commencement
 degree: 'Doctor of Philosophy'     # Masters of Science, Art, etc. 
 major: 'Earth Sciences'
-depttype: 'Faculty of Math and Science Brock University'                 # Department, College, etc.
+depttype: 'Brock University'                 # University Name
 depthead: 'Head'                   # Chair, Chancellor, Interim Head, etc.
 department: 'Department of Earth Science'
 advisor: 'Dr. Jane R. Doe'
