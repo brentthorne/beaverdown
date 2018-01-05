@@ -12,4 +12,4 @@ download: [["thesis.pdf", "PDF"],
   ["thesis.epub", "EPUB"],
   ["thesis.docx", "Word"]
   ]
-  delete_merged_file: TRUE
+delete_merged_file: TRUE
