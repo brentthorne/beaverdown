@@ -200,6 +200,7 @@
 \newcommand{\@spacing}{}
 \DeclareOption{onehalf}{\renewcommand{\@spacing}{\onehalfspacing}}
 \DeclareOption{double}{\renewcommand{\@spacing}{\doublespacing}}
+\DeclareOption{single}{\renewcommand{\@spacing}{\singlespacing}}
 \AtEndOfClass{\@spacing}
 
 % Draft or final version?

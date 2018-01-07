@@ -9,10 +9,12 @@ date: 'January 1, 2018'            # date of submission
 commencement: '2018'               # year of commencement
 degree: 'Doctor of Philosophy'     # Masters of Science, Art, etc. 
 major: 'Earth Sciences'
-depttype: 'Brock University'                 # University Name
+depttype: 'Brock University'       # University Name
 depthead: 'Head'                   # Chair, Chancellor, Interim Head, etc.
 department: 'Department of Earth Science'
 advisor: 'Dr. Jane R. Doe'
+font-family: 'times-new-roman'
+
 #
 # Optional Information --------------------------------------------------------
 #
@@ -49,10 +51,7 @@ link-citations: yes
 # Pretext sections ------------------------------------------------------------
 #
 abstract: >
-  `r if(knitr:::is_latex_output()) brockdown::inc("pre/00-abstract.Rmd")`
-# If you'd rather include the preliminary content in files instead of inline
-# like below, use a command like that for the abstract above.  Note that a tab is 
-# needed on the line after the >.
+ `r if(knitr:::is_latex_output()) brockdown::inc("pre/00-abstract.Rmd")`
 acknowledgements: >
   `r if(knitr:::is_latex_output()) brockdown::inc("pre/00-acknowledgements.Rmd")`
 contributors: > 
